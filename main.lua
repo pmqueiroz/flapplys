@@ -6,8 +6,8 @@ WINDOW_HEIGHT = 720
 VIRTUAL_WIDTH = 512
 VIRTUAL_HEIGHT = 288
 
-local background = love.graphics.newImage('assets/to_be_replaced/background.png')
-local ground = love.graphics.newImage('assets/to_be_replaced/ground.png')
+local background = love.graphics.newImage('src/assets/to_be_replaced/background.png')
+local ground = love.graphics.newImage('src/assets/to_be_replaced/ground.png')
 
 function love.load()
    love.graphics.setDefaultFilter('nearest', 'nearest')
