@@ -11,6 +11,7 @@ VIRTUAL_HEIGHT = 288
 
 local background = love.graphics.newImage('src/assets/to_be_replaced/background.png')
 local ground = love.graphics.newImage('src/assets/to_be_replaced/ground.png')
+local cursor = love.graphics.newImage('src/assets/cursor-text.png')
 local backgroundScroll = 0
 local groundScroll = 0
 
@@ -23,8 +24,8 @@ local lys = Lys()
 
 function love.load()
    love.graphics.setDefaultFilter('nearest', 'nearest')
-
    love.window.setTitle('Flapplys')
+   love.mouse.setVisible(false)
 
    push:setupScreen(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT, {
        vsync = true,
@@ -56,8 +57,9 @@ function love.draw()
    
    love.graphics.draw(background, -backgroundScroll, 0)
    love.graphics.draw(ground, -groundScroll, VIRTUAL_HEIGHT - 16)
-
    lys:render()
    
+   
+   love.graphics.draw(cursor, love.mouse.getX(), love.mouse.getY())
    push:finish()
 end
