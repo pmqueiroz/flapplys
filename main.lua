@@ -50,6 +50,8 @@ function love.update(dt)
 
    groundScroll = (groundScroll + GROUND_SCROLL_SPEED * dt)
       % VIRTUAL_WIDTH
+
+   lys:update(dt)
 end
 
 function love.draw()

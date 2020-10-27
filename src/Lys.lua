@@ -1,5 +1,7 @@
 Lys = Class{}
 
+local GRAVITY = 20
+
 function Lys:init()
    self.image = love.graphics.newImage('src/assets/lys.png')
    self.width = self.image:getWidth()
@@ -7,6 +9,13 @@ function Lys:init()
 
    self.x = VIRTUAL_WIDTH / 2 - (self.width / 2)
    self.y = VIRTUAL_HEIGHT / 2 - (self.height / 2)
+   self.dy = 0
+end
+
+function Lys:update(dt)
+   self.dy = self.dy + GRAVITY * dt
+
+   self.y = self.y + self.dy
 end
 
 function Lys:render()
